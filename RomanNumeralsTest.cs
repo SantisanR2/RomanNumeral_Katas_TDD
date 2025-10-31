@@ -4,36 +4,16 @@ namespace RomanNumerals;
 
 public class RomanNumeralsTest
 {
-    [Fact]
-    public void Si_Ingreso_1_Debe_Dar_I()
+    [Theory]
+    [InlineData(1, "I")]
+    [InlineData(2, "II")]
+    [InlineData(5, "V")]
+    [InlineData(4, "IV")]
+    public void Si_IngresoUnNumeroArabico_Debe_DarSuNumeroRomano(int arabicNUmber, string expectedRomanNumber)
     {
-        var romanNumber = ToRoman(1);
+        var romanNumber = ToRoman(arabicNUmber);
 
-        romanNumber.Should().Be("I");
-    }
-
-    [Fact]
-    public void Si_Ingreso_2_Debe_Dar_II()
-    {
-        var romanNumber = ToRoman(2);
-
-        romanNumber.Should().Be("II");
-    }
-
-    [Fact]
-    public void Si_Ingreso_5_Debe_Dar_V()
-    {
-        var romanNumber = ToRoman(5);
-
-        romanNumber.Should().Be("V");
-    }
-
-    [Fact]
-    public void Si_Ingreso_4_Debe_Dar_IV()
-    {
-        var romanNumber = ToRoman(4);
-
-        romanNumber.Should().Be("IV");
+        romanNumber.Should().Be(expectedRomanNumber);
     }
 
     private string ToRoman(int arabicNumber)
