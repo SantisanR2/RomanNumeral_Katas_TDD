@@ -46,6 +46,9 @@ public class RomanNumeralsTest
 
         if (arabicNumber == 5)
             romanNumber = "V";
+
+        if (arabicNumber == 4)
+            romanNumber = "I" + "V";
             
         return romanNumber;
     }
