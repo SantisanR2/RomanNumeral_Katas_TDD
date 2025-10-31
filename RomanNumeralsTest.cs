@@ -10,6 +10,7 @@ public class RomanNumeralsTest
     [InlineData(5, "V")]
     [InlineData(4, "IV")]
     [InlineData(6, "VI")]
+    [InlineData(9, "IX")]
     public void Si_IngresoUnNumeroArabico_Debe_DarSuNumeroRomano(int arabicNumber, string expectedRomanNumber)
     {
         var romanNumber = RomanNumberConverter.ToRoman(arabicNumber);
