@@ -1,8 +1,8 @@
 ﻿namespace RomanNumerals;
 
-public class RomanNumberConverter
+public static class RomanNumberConverter
 {
-    private static Dictionary<int, string> _romanTable = new()
+    private static readonly Dictionary<int, string> RomanTable = new()
     {
         { 1000, "M" },
         { 900, "CM" },
@@ -24,7 +24,7 @@ public class RomanNumberConverter
         var romanNumber = "";
         var remaining = arabicNumber;
 
-        foreach (var (value, symbol) in _romanTable)
+        foreach (var (value, symbol) in RomanTable)
         {
             while (remaining >= value)
             {
