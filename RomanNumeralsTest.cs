@@ -28,6 +28,14 @@ public class RomanNumeralsTest
         romanNumber.Should().Be("V");
     }
 
+    [Fact]
+    public void Si_Ingreso_4_Debe_Dar_IV()
+    {
+        var romanNumber = ToRoman(4);
+
+        romanNumber.Should().Be("IV");
+    }
+
     private string ToRoman(int arabicNumber)
     {
         var romanNumber = "";
