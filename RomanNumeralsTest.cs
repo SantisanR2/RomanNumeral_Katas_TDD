@@ -22,6 +22,12 @@ public class RomanNumeralsTest
 
     private string ToRoman(int arabicNumber)
     {
-        return "I";
+        var romanNumber = "";
+        for (var i = 0; i < arabicNumber; i++)
+        {
+            romanNumber += "I";
+        }
+
+        return romanNumber;
     }
 }
