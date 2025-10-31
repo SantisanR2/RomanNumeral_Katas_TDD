@@ -35,6 +35,10 @@ public class RomanNumberConverter
 
         if (arabicNumber == 6)
             romanNumber = _romanTable[5] + _romanTable[1];
+        
+        if (arabicNumber == 9)
+            romanNumber = _romanTable[9];
+        
             
         return romanNumber;
     }
