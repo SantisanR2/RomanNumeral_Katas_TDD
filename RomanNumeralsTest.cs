@@ -12,8 +12,8 @@ public class RomanNumeralsTest
         romanNumber.Should().Be("I");
     }
 
-    private string ToRoman(int i)
+    private string ToRoman(int arabicNumber)
     {
-        throw new NotImplementedException();
+        return "I";
     }
 }
