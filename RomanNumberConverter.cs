@@ -4,42 +4,35 @@ public class RomanNumberConverter
 {
     private static Dictionary<int, string> _romanTable = new()
     {
-        { 1, "I" },
-        { 4, "IV" },
-        { 5, "V" },
-        { 9, "IX" },
-        { 10, "X" },
-        { 40, "XL" },
-        { 50, "L" },
-        { 90, "XC" },
-        { 100, "C" },
-        { 400, "CD" },
-        { 500, "D" },
-        { 900, "CM" },
         { 1000, "M" },
+        { 900, "CM" },
+        { 500, "D" },
+        { 400, "CD" },
+        { 100, "C" },
+        { 90, "XC" },
+        { 50, "L" },
+        { 40, "XL" },
+        { 10, "X" },
+        { 9, "IX" },
+        { 5, "V" },
+        { 4, "IV" },
+        { 1, "I" }
     };
 
     public static string ToRoman(int arabicNumber)
     {
         var romanNumber = "";
-        for (var i = 0; i < arabicNumber; i++)
+        var remaining = arabicNumber;
+
+        foreach (var (value, symbol) in _romanTable)
         {
-            romanNumber += _romanTable[1];
+            while (remaining >= value)
+            {
+                romanNumber += symbol;
+                remaining -= value;
+            }
         }
 
-        if (arabicNumber == 5)
-            romanNumber = _romanTable[5];
-
-        if (arabicNumber == 4)
-            romanNumber = _romanTable[4];
-
-        if (arabicNumber == 6)
-            romanNumber = _romanTable[5] + _romanTable[1];
-        
-        if (arabicNumber == 9)
-            romanNumber = _romanTable[9];
-        
-            
         return romanNumber;
     }
 }
