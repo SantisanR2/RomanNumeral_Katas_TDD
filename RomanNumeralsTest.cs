@@ -20,6 +20,14 @@ public class RomanNumeralsTest
         romanNumber.Should().Be("II");
     }
 
+    [Fact]
+    public void Si_Ingreso_5_Debe_Dar_V()
+    {
+        var romanNumber = ToRoman(5);
+
+        romanNumber.Should().Be("V");
+    }
+
     private string ToRoman(int arabicNumber)
     {
         var romanNumber = "";
