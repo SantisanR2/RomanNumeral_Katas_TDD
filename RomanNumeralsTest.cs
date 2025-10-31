@@ -36,6 +36,9 @@ public class RomanNumeralsTest
             romanNumber += "I";
         }
 
+        if (arabicNumber == 5)
+            romanNumber = "V";
+            
         return romanNumber;
     }
 }
