@@ -30,6 +30,9 @@ public class RomanNumeralsTest
 
         if (arabicNumber == 4)
             romanNumber = "I" + "V";
+
+        if (arabicNumber == 6)
+            romanNumber = "V" + "I";
             
         return romanNumber;
     }
