@@ -10,30 +10,10 @@ public class RomanNumeralsTest
     [InlineData(5, "V")]
     [InlineData(4, "IV")]
     [InlineData(6, "VI")]
-    public void Si_IngresoUnNumeroArabico_Debe_DarSuNumeroRomano(int arabicNUmber, string expectedRomanNumber)
+    public void Si_IngresoUnNumeroArabico_Debe_DarSuNumeroRomano(int arabicNumber, string expectedRomanNumber)
     {
-        var romanNumber = ToRoman(arabicNUmber);
+        var romanNumber = RomanNumberConverter.ToRoman(arabicNumber);
 
         romanNumber.Should().Be(expectedRomanNumber);
-    }
-
-    private string ToRoman(int arabicNumber)
-    {
-        var romanNumber = "";
-        for (var i = 0; i < arabicNumber; i++)
-        {
-            romanNumber += "I";
-        }
-
-        if (arabicNumber == 5)
-            romanNumber = "V";
-
-        if (arabicNumber == 4)
-            romanNumber = "I" + "V";
-
-        if (arabicNumber == 6)
-            romanNumber = "V" + "I";
-            
-        return romanNumber;
     }
 }
